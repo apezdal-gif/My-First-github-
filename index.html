@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Моє Портфоліо</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      height: 100vh;
+    }
+
+    /* Сайдбар */
+    .sidebar {
+      width: 250px;
+      background-color: #222;
+      color: white;
+      padding: 20px;
+    }
+
+    .sidebar h2 {
+      text-align: center;
+    }
+
+    .sidebar a {
+      color: white;
+      text-decoration: none;
+      display: block;
+      margin: 10px 0;
+      transition: 0.3s;
+    }
+
+    .sidebar a:hover {
+      background-color: #444;
+      padding-left: 10px;
+    }
+
+    /* Контент */
+    .content {
+      flex: 1;
+      padding: 40px;
+      background-color: #f4f4f4;
+    }
+
+    .project {
+      background-color: white;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .project h3 {
+      margin-top: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <h2>Апёздал</h2>
+    <a href="#about">Про мене</a>
+    <a href="#projects">Проєкти</a>
+    <a href="#contacts">Контакти</a>
+  </div>
+
+  <div class="content">
+    <section id="about">
+      <h1> Привіт!</h1>
+      <p>Я НЕ веброзробник і створюю сайти, ігри та ігри .</p>
+    </section>
+
+    <section id="projects">
+      <h2>НЕ мої проєкти</h2>
+
+      <div class="project">
+        <h3>Slap Battles</h3>
+        <p>Файтинг-гра з унікальними ударами у Roblox.https://www.roblox.com/games/6403373529/UPDATE-Slap-Battles</p>
+      </div>
+
+      <div class="project">
+        <h3>Decaying Winter</h3>
+        <p>выживи https://www.roblox.com/games/13438553315/Decaying-Winter</p>
+      </div>
+
+      <div class="project">
+        <h3>Block Tales</h3>
+        <p>Пригодницька гра в не піксельному світі.https://www.roblox.com/games/16483433878/Block-Tales-DEMO-4</p>
+      </div>
+    </section>
+
+    <section id="contacts">
+      <h2>Контакти</h2>
+      <p>Email:privatecoolbacon@gmail.com</p>
+      <p>~ ?????? ??????: https://www.youtube.com/watch?v=cWfp7aQsGgA&list=LL&index=2</p>
+    </section>
+  </div>
+
+  <script>
+    // Прокрутка при натисканні на лінки в сайдбарі
+    document.querySelectorAll('.sidebar a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const section = document.getElementById(targetId);
+        section.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
+
+</body>
+</html>
